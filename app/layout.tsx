@@ -1,22 +1,26 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { MobileCta } from "@/components/site/MobileCta";
 import { site } from "@/lib/site";
 
-const inter = Inter({
-  subsets: ["latin"],
+// Self-hosted variable fonts (no build-time network dependency).
+const inter = localFont({
+  src: "./fonts/Inter-Variable.woff2",
   display: "swap",
+  weight: "100 900",
   variable: "--font-sans",
+  fallback: ["system-ui", "sans-serif"],
 });
 
-const fraunces = Fraunces({
-  subsets: ["latin"],
+const fraunces = localFont({
+  src: "./fonts/Fraunces-Variable.woff2",
   display: "swap",
+  weight: "100 900",
   variable: "--font-display",
-  axes: ["opsz"],
+  fallback: ["Georgia", "serif"],
 });
 
 export const metadata: Metadata = {
