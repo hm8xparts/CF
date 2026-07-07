@@ -68,7 +68,7 @@ export function HowItWorks({
                 {/* Copy */}
                 <div className={flip ? "lg:order-2" : ""}>
                   <div className="flex items-center gap-3">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-500 text-sm font-bold text-white">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-ink text-sm font-bold text-white">
                       {step.n}
                     </span>
                     <span className="h-px flex-1 bg-ink/10" />

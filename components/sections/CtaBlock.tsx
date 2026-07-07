@@ -20,7 +20,7 @@ export function CtaBlock({
   return (
     <section className="bg-paper py-20 sm:py-24">
       <div className="container-x">
-        <div className="relative overflow-hidden rounded-4xl bg-brand-700 px-6 py-16 text-center shadow-lift sm:px-16 sm:py-20">
+        <div className="relative overflow-hidden rounded-4xl bg-ink px-6 py-16 text-center shadow-lift sm:px-16 sm:py-20">
           {/* Decorative background */}
           <div
             className="pointer-events-none absolute inset-0 bg-grid-light opacity-40"

@@ -45,7 +45,7 @@
   }
 
   ::selection {
-    background-color: #0e7c66;
+    background-color: #0f1d3d;
     color: #ffffff;
   }
 
@@ -56,7 +56,7 @@
   textarea:focus-visible,
   select:focus-visible,
   [tabindex]:focus-visible {
-    outline: 2px solid #0e7c66;
+    outline: 2px solid #d22a44;
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -75,10 +75,10 @@
   .bg-grid {
     background-image: linear-gradient(
         to right,
-        rgba(18, 33, 28, 0.04) 1px,
+        rgba(15, 29, 61, 0.045) 1px,
         transparent 1px
       ),
-      linear-gradient(to bottom, rgba(18, 33, 28, 0.04) 1px, transparent 1px);
+      linear-gradient(to bottom, rgba(15, 29, 61, 0.045) 1px, transparent 1px);
     background-size: 44px 44px;
   }
 

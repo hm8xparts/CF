@@ -9,40 +9,40 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Warm paper backgrounds
+        // Cool neutral paper backgrounds (brand light #F2F4F7)
         paper: {
-          DEFAULT: "#FBFAF6",
-          soft: "#F5F3EC",
-          deep: "#EEEADF",
+          DEFAULT: "#FBFCFD",
+          soft: "#F2F4F7",
+          deep: "#E6E9EF",
         },
-        // Deep forest ink for text and dark sections
+        // Brand navy for text and dark sections (#0F1D3D / #1F2937 / #6B7280)
         ink: {
-          DEFAULT: "#12211C",
-          soft: "#2C3A34",
-          muted: "#5A6862",
+          DEFAULT: "#0F1D3D",
+          soft: "#1F2937",
+          muted: "#6B7280",
         },
-        // Brand teal-emerald — "cause meets commerce"
+        // Brand coral — the "Fusion" accent and primary action color
         brand: {
-          50: "#EAF6F2",
-          100: "#CDEAE0",
-          200: "#9BD4C2",
-          300: "#63B9A0",
-          400: "#2F9C7F",
-          500: "#0E7C66",
-          600: "#0A6353",
-          700: "#084B3F",
-          800: "#06382F",
-          900: "#042721",
+          50: "#FFF1F3",
+          100: "#FFDEE3",
+          200: "#FFC2CA",
+          300: "#FF9DAB",
+          400: "#FB8493",
+          500: "#FF6B7A",
+          600: "#D22A44",
+          700: "#AE1E35",
+          800: "#8A1729",
+          900: "#6B121F",
         },
-        // Warm coral accent — human, mission-driven highlight
+        // Accent mirrors the coral family for small highlights and dots
         accent: {
-          50: "#FEF1EC",
-          100: "#FBDBCF",
-          200: "#F7B49B",
-          300: "#F28C6A",
-          400: "#EE6F45",
-          500: "#E1552B",
-          600: "#C24421",
+          50: "#FFF1F3",
+          100: "#FFDEE3",
+          200: "#FFC2CA",
+          300: "#FF9DAB",
+          400: "#FF7E8D",
+          500: "#FF6B7A",
+          600: "#D22A44",
         },
       },
       fontFamily: {
@@ -55,7 +55,7 @@ const config: Config = {
       boxShadow: {
         card: "0 1px 2px rgba(18,33,28,0.04), 0 12px 32px -12px rgba(18,33,28,0.18)",
         lift: "0 2px 4px rgba(18,33,28,0.05), 0 24px 48px -20px rgba(18,33,28,0.30)",
-        glow: "0 20px 60px -24px rgba(14,124,102,0.55)",
+        glow: "0 18px 50px -22px rgba(255,107,122,0.55)",
       },
       maxWidth: {
         content: "76rem",
