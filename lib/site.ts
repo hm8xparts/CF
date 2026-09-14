@@ -19,8 +19,8 @@ export const site = {
     phonePlaceholder: "(000) 000-0000", // PLACEHOLDER
     // Where the contact form should POST once wired up (e.g. a form service).
     formEndpointPlaceholder: "/api/contact", // PLACEHOLDER
-    // Scheduling tool embed (e.g. Calendly/SavvyCal) goes here.
-    schedulingUrlPlaceholder: "#schedule", // PLACEHOLDER
+    // Scheduling tool (Calendly). Update the URL to change it site-wide.
+    schedulingUrl: "https://calendly.com/causefusion",
   },
 
   // Analytics tag placeholder — drop the real script/ID in app/layout.tsx.
@@ -37,7 +37,7 @@ export const nav: NavItem[] = [
 ];
 
 export const cta = {
-  primary: { label: "Schedule a Call", href: "/contact" },
+  primary: { label: "Schedule a Call", href: "/contact#schedule" },
   secondary: { label: "See How It Works", href: "/how-it-works" },
   partnership: { label: "Start a Partnership", href: "/contact" },
 } as const;
