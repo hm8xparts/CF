@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Logo } from "./Logo";
+import Logo from "./Logo";
 import { Button } from "@/components/ui/Button";
 import { nav, cta } from "@/lib/site";
 import { cn } from "@/lib/cn";
@@ -44,7 +44,13 @@ export function Header() {
     >
       <div className="container-x">
         <div className="flex h-16 items-center justify-between sm:h-[4.5rem]">
-          <Logo />
+          <Link
+            href="/"
+            aria-label="CauseFusion home"
+            className="inline-flex items-center"
+          >
+            <Logo className="h-9 w-auto" />
+          </Link>
 
           <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
             {nav.map((item) => {
