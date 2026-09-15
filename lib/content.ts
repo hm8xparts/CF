@@ -179,3 +179,50 @@ export const responsibilities = {
     "Share revenue back to your mission",
   ],
 };
+
+/**
+ * Team track-record logo wall (from the "30 years of combined experience" slide).
+ * These represent brands the CauseFusion team has delivered product for over
+ * their careers — the team's combined experience, not CauseFusion-the-company
+ * client relationships. Greyscale marks live in public/brand/logos/.
+ */
+export type ExperienceLogo = { file: string; name: string };
+
+export const experience: {
+  enterprise: ExperienceLogo[];
+  retail: ExperienceLogo[];
+  sponsors: ExperienceLogo[];
+} = {
+  enterprise: [
+    { file: "honda", name: "Honda" },
+    { file: "subaru", name: "Subaru" },
+    { file: "kfc", name: "KFC" },
+    { file: "continental", name: "Continental" },
+    { file: "molson-coors", name: "Molson Coors" },
+    { file: "disney-marvel", name: "Marvel" },
+  ],
+  retail: [
+    { file: "tjx", name: "TJX" },
+    { file: "urban-outfitters", name: "Urban Outfitters" },
+    { file: "aeropostale", name: "Aéropostale" },
+    { file: "american-eagle", name: "American Eagle" },
+    { file: "zumiez", name: "Zumiez" },
+    { file: "asos", name: "ASOS" },
+    { file: "inditex-zara", name: "Inditex (Zara)" },
+    { file: "pacsun", name: "PacSun" },
+    { file: "cotton-on", name: "Cotton On" },
+    { file: "primark", name: "Primark" },
+  ],
+  sponsors: [
+    { file: "jpmorgan-chase", name: "J.P. Morgan Chase" },
+    { file: "wawa", name: "Wawa" },
+    { file: "paramount", name: "Paramount" },
+  ],
+};
+
+// Flat list for a single unified wall (home page strip).
+export const experienceAll: ExperienceLogo[] = [
+  ...experience.enterprise,
+  ...experience.retail,
+  ...experience.sponsors,
+];

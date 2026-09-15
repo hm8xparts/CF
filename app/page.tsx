@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
-import { LogoBar } from "@/components/sections/LogoBar";
+import { Experience } from "@/components/sections/Experience";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { ServicesOverview } from "@/components/sections/ServicesOverview";
 import { WhyGrid } from "@/components/sections/WhyGrid";
@@ -22,7 +22,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <LogoBar />
+      <Experience variant="strip" />
       <HowItWorks />
       <ServicesOverview />
       <WhyGrid />

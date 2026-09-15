@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { RevenueShare } from "@/components/sections/RevenueShare";
+import { Experience } from "@/components/sections/Experience";
 import { CtaBlock } from "@/components/sections/CtaBlock";
 import { Icon } from "@/components/ui/Icon";
 
@@ -94,6 +95,9 @@ export default function AboutPage() {
 
       {/* Shared-revenue philosophy */}
       <RevenueShare tone="ink" />
+
+      {/* Team track record */}
+      <Experience variant="full" />
 
       <CtaBlock
         eyebrow="Start a partnership"
