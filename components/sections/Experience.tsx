@@ -81,7 +81,6 @@ function ExperienceFull() {
       <div className="mt-14 space-y-12">
         <LogoGroup label="Enterprise" logos={experience.enterprise} />
         <LogoGroup label="Retail delivery" logos={experience.retail} />
-        <LogoGroup label="Foundation & sponsor programs" logos={experience.sponsors} />
       </div>
 
       <p className="mt-12 max-w-2xl text-sm leading-relaxed text-ink-muted">

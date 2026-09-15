@@ -191,7 +191,6 @@ export type ExperienceLogo = { file: string; name: string };
 export const experience: {
   enterprise: ExperienceLogo[];
   retail: ExperienceLogo[];
-  sponsors: ExperienceLogo[];
 } = {
   enterprise: [
     { file: "honda", name: "Honda" },
@@ -213,16 +212,10 @@ export const experience: {
     { file: "cotton-on", name: "Cotton On" },
     { file: "primark", name: "Primark" },
   ],
-  sponsors: [
-    { file: "jpmorgan-chase", name: "J.P. Morgan Chase" },
-    { file: "wawa", name: "Wawa" },
-    { file: "paramount", name: "Paramount" },
-  ],
 };
 
 // Flat list for a single unified wall (home page strip).
 export const experienceAll: ExperienceLogo[] = [
   ...experience.enterprise,
   ...experience.retail,
-  ...experience.sponsors,
 ];
