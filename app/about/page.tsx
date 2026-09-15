@@ -95,32 +95,6 @@ export default function AboutPage() {
       {/* Shared-revenue philosophy */}
       <RevenueShare tone="ink" />
 
-      {/* Team placeholder */}
-      <Section tone="white" ariaLabel="Our team">
-        <SectionHeading
-          align="center"
-          eyebrow="The team"
-          title="Operators, designers, and logistics people."
-          intro="CauseFusion brings together product design, e-commerce, and fulfillment experience — the people who quietly run the merchandise engine behind your cause."
-          className="mx-auto"
-        />
-        <div className="mx-auto mt-12 grid max-w-4xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {Array.from({ length: 4 }).map((_, i) => (
-            <div
-              key={i}
-              className="rounded-3xl bg-paper-soft p-5 ring-1 ring-ink/8"
-            >
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-brand-100 to-paper-deep" />
-              <div className="mt-4 h-4 w-24 rounded bg-ink/10" />
-              <div className="mt-2 h-3 w-32 rounded bg-ink/8" />
-            </div>
-          ))}
-        </div>
-        <p className="mt-8 text-center text-sm italic text-ink-muted">
-          Team bios and photos are placeholders &mdash; to be added.
-        </p>
-      </Section>
-
       <CtaBlock
         eyebrow="Start a partnership"
         title="Let's talk about what merchandise could do for your cause."
