@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Logo from "./Logo";
 import { Button, ArrowRight } from "@/components/ui/Button";
 import { nav, cta, site } from "@/lib/site";
 
@@ -57,14 +56,20 @@ export function Footer() {
       <div className="container-x py-14">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div className="max-w-sm">
-            {/* On the dark footer, recolor the mark's navy tile to white so it
-                stays visible (until the official white lockup SVG is added). */}
+            {/* Official white lockup for the dark footer. */}
             <Link
               href="/"
               aria-label="CauseFusion home"
-              className="inline-flex items-center [&_.fill-ink]:fill-white"
+              className="inline-flex items-center"
             >
-              <Logo className="h-8 w-auto" wordmarkClassName="fill-white" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brand/causefusion-logo-site-white.svg"
+                alt="CauseFusion"
+                className="h-8 w-auto"
+                width={481}
+                height={92}
+              />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-white/60">
               CauseFusion runs the entire merchandise program for nonprofits —
