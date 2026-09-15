@@ -6,7 +6,6 @@ import { ServicesOverview } from "@/components/sections/ServicesOverview";
 import { WhyGrid } from "@/components/sections/WhyGrid";
 import { ProductShowcase } from "@/components/sections/ProductShowcase";
 import { RevenueShare } from "@/components/sections/RevenueShare";
-import { Testimonial } from "@/components/sections/Testimonial";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Faq } from "@/components/sections/Faq";
 import { CtaBlock } from "@/components/sections/CtaBlock";
@@ -29,7 +28,6 @@ export default function HomePage() {
       <WhyGrid />
       <ProductShowcase />
       <RevenueShare />
-      <Testimonial />
 
       <Section tone="white" ariaLabel="Frequently asked questions">
         <SectionHeading

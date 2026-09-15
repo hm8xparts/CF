@@ -103,10 +103,12 @@ export function Footer() {
           <p>
             &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <p className="text-white/40">
-            {/* PLACEHOLDER: replace with verified contact details */}
-            <span className="italic">Contact details coming soon</span>
-          </p>
+          <a
+            href={`mailto:${site.contact.email}`}
+            className="text-white/60 transition-colors hover:text-white"
+          >
+            {site.contact.email}
+          </a>
         </div>
       </div>
     </footer>

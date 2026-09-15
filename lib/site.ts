@@ -1,7 +1,7 @@
 /**
  * Central site configuration.
- * Edit these values to update navigation, CTAs, and placeholder contact details
- * across the whole site in one place.
+ * Edit these values to update navigation, CTAs, and contact details across the
+ * whole site in one place.
  */
 
 export const site = {
@@ -12,19 +12,16 @@ export const site = {
   description:
     "CauseFusion helps nonprofits launch and operate branded merchandise programs with custom products, storefronts, payments, fulfillment, and shared-revenue partnership — with no upfront cost to start.",
 
-  // ── Placeholders — replace with verified details before launch ─────────────
-  // Marked as placeholders per brief; do not treat as confirmed contact info.
   contact: {
-    emailPlaceholder: "hello@causefusion.com", // PLACEHOLDER
-    phonePlaceholder: "(000) 000-0000", // PLACEHOLDER
-    // Where the contact form should POST once wired up (e.g. a form service).
-    formEndpointPlaceholder: "/api/contact", // PLACEHOLDER
+    // Public contact address; also the inbox the contact form emails.
+    email: "hello@causefusion.com",
     // Scheduling tool (Calendly). Update the URL to change it site-wide.
     schedulingUrl: "https://calendly.com/causefusion",
+    // Web3Forms access key — set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in the
+    // environment (Vercel → Project → Settings → Environment Variables).
+    // Get a free key at https://web3forms.com by registering hello@causefusion.com.
+    web3formsKey: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? "",
   },
-
-  // Analytics tag placeholder — drop the real script/ID in app/layout.tsx.
-  analyticsIdPlaceholder: "CF-ANALYTICS-ID", // PLACEHOLDER
 } as const;
 
 export type NavItem = { label: string; href: string };

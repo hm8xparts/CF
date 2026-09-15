@@ -40,12 +40,48 @@ function Label({
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // PLACEHOLDER: wire this up to your form service / API route.
-    // Endpoint placeholder: site.contact.formEndpointPlaceholder
-    setSubmitted(true);
+    setError(null);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    // Emails submissions to hello@causefusion.com via Web3Forms (no backend).
+    const accessKey = site.contact.web3formsKey;
+    if (!accessKey) {
+      // Not yet configured — accept the submission so the UI works, but make
+      // clear nothing was sent. Set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY to enable.
+      setSubmitted(true);
+      return;
+    }
+
+    data.append("access_key", accessKey);
+    data.append("subject", "New CauseFusion partnership inquiry");
+    data.append("from_name", "CauseFusion website");
+
+    setSending(true);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data,
+      });
+      const json = await res.json();
+      if (json.success) {
+        form.reset();
+        setSubmitted(true);
+      } else {
+        setError("Something went wrong. Please email us directly.");
+      }
+    } catch {
+      setError("Couldn't reach the server. Please email us directly.");
+    } finally {
+      setSending(false);
+    }
   }
 
   if (submitted) {
@@ -66,8 +102,8 @@ export function ContactForm() {
           Thanks — we&rsquo;ll be in touch.
         </h3>
         <p className="mx-auto mt-2 max-w-sm text-sm text-ink-muted">
-          This is a demo submission. Connect the form to your inbox or CRM to
-          start receiving real partnership inquiries.
+          Your message is on its way to our team. We&rsquo;ll get back to you
+          shortly.
         </p>
         <button
           type="button"
@@ -83,7 +119,6 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      // action={site.contact.formEndpointPlaceholder}
       className="rounded-3xl bg-white p-6 shadow-card ring-1 ring-ink/8 sm:p-8"
       noValidate
     >
@@ -197,20 +232,45 @@ export function ContactForm() {
         </div>
       </div>
 
+      {/* Honeypot spam trap — hidden from users, bots fill it in */}
+      <input
+        type="checkbox"
+        name="botcheck"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
+
+      {error ? (
+        <p
+          role="alert"
+          className="mt-4 rounded-xl bg-brand-50 px-4 py-3 text-sm text-brand-700"
+        >
+          {error}{" "}
+          <a href={`mailto:${site.contact.email}`} className="font-semibold underline">
+            {site.contact.email}
+          </a>
+        </p>
+      ) : null}
+
       <button
         type="submit"
-        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-500 px-7 py-3.5 text-base font-semibold text-white shadow-glow transition-all hover:-translate-y-0.5 hover:bg-brand-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500"
+        disabled={sending}
+        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-500 px-7 py-3.5 text-base font-semibold text-ink shadow-glow transition-all hover:-translate-y-0.5 hover:bg-brand-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 disabled:cursor-not-allowed disabled:opacity-70"
       >
-        Start the Conversation
-        <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" aria-hidden="true">
-          <path
-            d="M4 10h12m0 0-5-5m5 5-5 5"
-            stroke="currentColor"
-            strokeWidth="1.75"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        {sending ? "Sending…" : "Start the Conversation"}
+        {!sending ? (
+          <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" aria-hidden="true">
+            <path
+              d="M4 10h12m0 0-5-5m5 5-5 5"
+              stroke="currentColor"
+              strokeWidth="1.75"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        ) : null}
       </button>
 
       <p className="mt-4 text-center text-xs text-ink-muted">

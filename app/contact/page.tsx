@@ -100,47 +100,27 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Verified contact details placeholder */}
+        {/* Contact details */}
         <div className="mt-12 rounded-3xl bg-paper-soft p-6 sm:p-8">
           <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
-            <dl className="grid gap-6 sm:grid-cols-2">
-              <div className="flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-brand-600 ring-1 ring-ink/8">
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
-                    <path d="M4 6h16a1 1 0 0 1 1 1v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1Zm8 7 8-5H4l8 5Z" />
-                  </svg>
-                </span>
-                <div>
-                  <dt className="text-xs font-medium uppercase tracking-wide text-ink-muted">
-                    Email
-                  </dt>
-                  <dd className="text-sm font-medium text-ink">
-                    {site.contact.emailPlaceholder}{" "}
-                    <span className="text-xs italic text-ink-muted">
-                      (placeholder)
-                    </span>
-                  </dd>
-                </div>
+            <div className="flex items-center gap-3">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-brand-600 ring-1 ring-ink/8">
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+                  <path d="M4 6h16a1 1 0 0 1 1 1v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1Zm8 7 8-5H4l8 5Z" />
+                </svg>
+              </span>
+              <div>
+                <p className="text-xs font-medium uppercase tracking-wide text-ink-muted">
+                  Email us
+                </p>
+                <a
+                  href={`mailto:${site.contact.email}`}
+                  className="text-sm font-medium text-ink hover:text-brand-700"
+                >
+                  {site.contact.email}
+                </a>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-brand-600 ring-1 ring-ink/8">
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
-                    <path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11 11 0 0 0 3.4.55 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .55 3.4 1 1 0 0 1-.25 1l-2.2 2.4Z" />
-                  </svg>
-                </span>
-                <div>
-                  <dt className="text-xs font-medium uppercase tracking-wide text-ink-muted">
-                    Phone
-                  </dt>
-                  <dd className="text-sm font-medium text-ink">
-                    {site.contact.phonePlaceholder}{" "}
-                    <span className="text-xs italic text-ink-muted">
-                      (placeholder)
-                    </span>
-                  </dd>
-                </div>
-              </div>
-            </dl>
+            </div>
 
             <ul className="flex flex-wrap gap-x-6 gap-y-2">
               {["No upfront cost to start", "Built for nonprofit teams"].map(
@@ -156,9 +136,6 @@ export default function ContactPage() {
               )}
             </ul>
           </div>
-          <p className="mt-6 text-xs italic text-ink-muted/70">
-            Verified contact details to be confirmed before launch.
-          </p>
         </div>
       </div>
     </section>
